@@ -41,11 +41,11 @@ def read_vcf(fnames):
             # implement into dictionary - each line in vcf gets a dict
             line = dict(zip(header, line))
 
-            print (line)
+            # print (line)
 
             break
 
-def insert_snps(reference, vcf_data, output_file):
+def insert_snps(reference, vcf_data):
     updated_reference = reference
     # sample_genome = output_file
 
@@ -64,9 +64,9 @@ def insert_snps(reference, vcf_data, output_file):
     
 def write_sample_genome(updated_reference, sample_name, output_file):
     for header, sequence in updated_reference.items():
-            with open(os.path.join(output_file, "{sample_name}.fna")) as f:
-                f.write(">{header}\n")
-                #WIP
+            with open(os.path.join(output_file, f"{sample_name}.fna")) as f:
+                f.write(f">{header}\n")
+                f.write(''.join(sequence))
 
 fname = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/breve/GCA_024665435.1_ASM2466543v1_genomic.fna.gz'
 fnames = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/breve/breve.vcalling.longshot.vcf.tar/minimap2/breve/*.longshot.vcf'
