@@ -38,12 +38,12 @@ def read_vcf(fnames):
 
             break
 
-fname = '/Users/Annaliese/Desktop/GIS_Practice_Project/data/BifidoIsolates/infantis/GCA_900637215.1_49888_B01_genomic.fna.gz'
+fname = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/GCA_900637215.1_49888_B01_genomic.fna.gz'
 ref = read_reference(fname)
 
 # infer SNP from each sample into reference genome (so we have a complete genome of each file)
 
-fnames = '/Users/Annaliese/Desktop/GIS_Practice_Project/data/BifidoIsolates/infantis/infantis.vcalling.longshot.vcf.tar/minimap2/infantis/*.longshot.vcf'
+fnames = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/infantis.vcalling.longshot.vcf.tar/minimap2/infantis/*.longshot.vcf'
 fnames = glob.glob(fnames)
 
 for fname in fnames:
