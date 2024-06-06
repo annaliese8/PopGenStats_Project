@@ -1,0 +1,26 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     'plugins/check-sparsity.so'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _version, symObjAddr: 0x0, symBinAddr: 0x24F4, symSize: 0x30 }
+  - { offsetInCU: 0x15F, offset: 0x15F, size: 0x8, addend: 0x0, symName: _version, symObjAddr: 0x0, symBinAddr: 0x24F4, symSize: 0x30 }
+  - { offsetInCU: 0x1B6, offset: 0x1B6, size: 0x8, addend: 0x0, symName: _error, symObjAddr: 0x30, symBinAddr: 0x2524, symSize: 0x34 }
+  - { offsetInCU: 0x1EA, offset: 0x1EA, size: 0x8, addend: 0x0, symName: _error_errno, symObjAddr: 0x64, symBinAddr: 0x2558, symSize: 0x80 }
+  - { offsetInCU: 0x22E, offset: 0x22E, size: 0x8, addend: 0x0, symName: _hts_bcf_wmode, symObjAddr: 0xE4, symBinAddr: 0x25D8, symSize: 0x3C }
+  - { offsetInCU: 0x24B, offset: 0x24B, size: 0x8, addend: 0x0, symName: _hts_bcf_wmode2, symObjAddr: 0x120, symBinAddr: 0x2614, symSize: 0x12C }
+  - { offsetInCU: 0x2C0, offset: 0x2C0, size: 0x8, addend: 0x0, symName: _set_wmode, symObjAddr: 0x24C, symBinAddr: 0x2740, symSize: 0x1F8 }
+  - { offsetInCU: 0x36B, offset: 0x36B, size: 0x8, addend: 0x0, symName: _parse_overlap_option, symObjAddr: 0x444, symBinAddr: 0x2938, symSize: 0xAC }
+  - { offsetInCU: 0x375, offset: 0x375, size: 0x8, addend: 0x0, symName: _parse_overlap_option, symObjAddr: 0x444, symBinAddr: 0x2938, symSize: 0xAC }
+  - { offsetInCU: 0x39E, offset: 0x39E, size: 0x8, addend: 0x0, symName: _write_index_parse, symObjAddr: 0x4F0, symBinAddr: 0x29E4, symSize: 0x80 }
+  - { offsetInCU: 0x3D6, offset: 0x3D6, size: 0x8, addend: 0x0, symName: _init_index2, symObjAddr: 0x570, symBinAddr: 0x2A64, symSize: 0x144 }
+  - { offsetInCU: 0x946, offset: 0x946, size: 0x8, addend: 0x0, symName: _init_index, symObjAddr: 0x6B4, symBinAddr: 0x2BA8, symSize: 0x8 }
+  - { offsetInCU: 0x26, offset: 0x9E0, size: 0x8, addend: 0x0, symName: _about, symObjAddr: 0x0, symBinAddr: 0x2BB0, symSize: 0xC }
+  - { offsetInCU: 0x41, offset: 0x9FB, size: 0x8, addend: 0x0, symName: _run, symObjAddr: 0xC, symBinAddr: 0x2BBC, symSize: 0x4A4 }
+  - { offsetInCU: 0x66, offset: 0xA20, size: 0x8, addend: 0x0, symName: _run.loptions, symObjAddr: 0xE08, symBinAddr: 0x81A0, symSize: 0x0 }
+  - { offsetInCU: 0x311, offset: 0xCCB, size: 0x8, addend: 0x0, symName: _test_region, symObjAddr: 0x4B0, symBinAddr: 0x3060, symSize: 0x4E0 }
+  - { offsetInCU: 0x1310, offset: 0x1CCA, size: 0x8, addend: 0x0, symName: _about, symObjAddr: 0x0, symBinAddr: 0x2BB0, symSize: 0xC }
+  - { offsetInCU: 0x14D2, offset: 0x1E8C, size: 0x8, addend: 0x0, symName: _test_region, symObjAddr: 0x4B0, symBinAddr: 0x3060, symSize: 0x4E0 }
+  - { offsetInCU: 0x1727, offset: 0x20E1, size: 0x8, addend: 0x0, symName: _bcf_hdr_id2name, symObjAddr: 0x990, symBinAddr: 0x3540, symSize: 0x34 }
+  - { offsetInCU: 0x191F, offset: 0x22D9, size: 0x8, addend: 0x0, symName: _bcf_hdr_id2name, symObjAddr: 0x990, symBinAddr: 0x3540, symSize: 0x34 }
+  - { offsetInCU: 0x1943, offset: 0x22FD, size: 0x8, addend: 0x0, symName: _bcf_hdr_name2id, symObjAddr: 0x9C4, symBinAddr: 0x3574, symSize: 0xC }
+...
