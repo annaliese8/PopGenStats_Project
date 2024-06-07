@@ -55,13 +55,13 @@ def insert_snps(reference, vcf_data):
 
     for snp in vcf_data:
         chrom = snp['#CHROM']
-        pos = int(snp['POS']) # turn into an int and make it 0-based
+        pos = int(snp['POS']) - 1 # turn into an int and make it 0-based
         ref = snp['REF']
         alt = snp['ALT']
 
-        # print(updated_reference[chrom][pos - 1], ref)
+        print(updated_reference[chrom][pos], ref, alt)
 
-        if updated_reference[chrom][pos - 1] == ref:
+        if updated_reference[chrom][pos] == ref:
             updated_reference[chrom][pos] = alt
         else:
             print(f"Ref base at {chrom}:{pos} does not match reference genome")
@@ -69,7 +69,12 @@ def insert_snps(reference, vcf_data):
             # also, it's only going off for hte first snp of each sample
             # ^ make sure this is being applied to each snp
 
-        return updated_reference
+            # current output example:
+            # `Ref base at CP102536.1:2330695 does not match reference genome
+            # T C T`
+            # Should be: `T T C`
+
+    return updated_reference
     
 def write_sample_genome(updated_reference, sample_name, output_file):
     for header, sequence in updated_reference.items():
