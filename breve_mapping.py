@@ -27,6 +27,7 @@ def read_reference(fname):
 
 def read_vcf(fnames):
     vcf_lines = []
+
     with open(fnames) as f:
         for line in f:
             if line.startswith('##'):
@@ -45,7 +46,8 @@ def read_vcf(fnames):
             # print (line)
 
             vcf_lines.append(line)
-            return vcf_lines
+
+    return vcf_lines
 
 def insert_snps(reference, vcf_data):
     updated_reference = reference
@@ -61,6 +63,9 @@ def insert_snps(reference, vcf_data):
             updated_reference[chrom][pos] = alt
         else:
             print(f"Ref base at {chrom}:{pos+1} does not match reference genome")
+            # this keeps going off?
+            # also, it's only going off for hte first snp of each sample
+            # ^ make sure this is being applied to each snp
 
         return updated_reference
     
