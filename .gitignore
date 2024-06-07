@@ -1,2 +1,6 @@
 data/*
 lib/*
+libexec/*
+bin/*
+output_breve_genomes/*
+output_infantis_genomes/*
