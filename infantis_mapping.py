@@ -83,4 +83,4 @@ for vcf in fnames:
     sample_name = os.path.basename(vcf).replace('.longshot.vcf', '')
     updated_reference = insert_snps(ref, vcf_data)
     write_sample_genome(updated_reference, sample_name, output_file)
-    print (f"{sample_name} completed!")
+    print (f"{sample_name} mapping completed!")
