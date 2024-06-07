@@ -55,14 +55,16 @@ def insert_snps(reference, vcf_data):
 
     for snp in vcf_data:
         chrom = snp['#CHROM']
-        pos = int(snp['POS']) - 1 # turn into an int and make it 0-based
+        pos = int(snp['POS']) # turn into an int and make it 0-based
         ref = snp['REF']
         alt = snp['ALT']
 
-        if updated_reference[chrom][pos] == ref:
+        # print(updated_reference[chrom][pos - 1], ref)
+
+        if updated_reference[chrom][pos - 1] == ref:
             updated_reference[chrom][pos] = alt
         else:
-            print(f"Ref base at {chrom}:{pos+1} does not match reference genome")
+            print(f"Ref base at {chrom}:{pos} does not match reference genome")
             # this keeps going off?
             # also, it's only going off for hte first snp of each sample
             # ^ make sure this is being applied to each snp
