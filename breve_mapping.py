@@ -92,9 +92,9 @@ def write_sample_genome(updated_reference, sample_name, output_file):
             #              for i in range(0, len(sequence), 60))
             #f.write(s + '\n')
 
-fname = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/breve/GCA_024665435.1_ASM2466543v1_genomic.fna.gz'
-fnames = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/breve/breve.vcalling.longshot.vcf.tar/minimap2/breve/*.longshot.vcf'
-output_file = '/Users/Annaliese/Desktop/PopGenStats_Project/output_breve_genomes'
+fname = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/breve/GCA_024665435.1_ASM2466543v1_genomic.fna.gz'
+fnames = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/breve/breve.vcalling.longshot.vcf.tar/minimap2/breve/*.longshot.vcf'
+output_file = '/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes'
 os.makedirs(output_file, exist_ok=True)
 
 ref = read_reference(fname)

@@ -76,9 +76,9 @@ def write_sample_genome(updated_reference, sample_name, output_file):
                 subsequence = ''.join(subsequence)
                 f.write(subsequence + '\n')
 
-fname = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/GCA_900637215.1_49888_B01_genomic.fna.gz'
-fnames = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/infantis.vcalling.longshot.vcf.tar/minimap2/infantis/*.longshot.vcf'
-output_file = '/Users/Annaliese/Desktop/PopGenStats_Project/output_infantis_genomes'
+fname = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/infantis/GCA_900637215.1_49888_B01_genomic.fna.gz'
+fnames = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/infantis/infantis.vcalling.longshot.vcf.tar/minimap2/infantis/*.longshot.vcf'
+output_file = '/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes'
 os.makedirs(output_file, exist_ok=True)
 
 ref = read_reference(fname)
