@@ -58,7 +58,7 @@ def insert_snps(reference, vcf_data):
         chrom = snp['#CHROM']
         pos = int(snp['POS']) - 1 # turn into an int and make it 0-based
         ref = snp['REF']
-        if snp['ALT'].contains(','):
+        if ',' in snp['ALT']:
             alt = snp['ALT'][:1]
         else:
             alt = snp['ALT']
