@@ -1,6 +1,7 @@
 import gzip
 import glob
 import os
+from copy import deepcopy
 
 def read_reference(fname):
     reference = {}
@@ -48,7 +49,7 @@ def read_vcf(fnames):
             return vcf_lines
 
 def insert_snps(reference, vcf_data):
-    updated_reference = reference
+    updated_reference = deepcopy(reference)
     # sample_genome = output_file
 
     for snp in vcf_data:
@@ -65,10 +66,15 @@ def insert_snps(reference, vcf_data):
         return updated_reference
     
 def write_sample_genome(updated_reference, sample_name, output_file):
-    for header, sequence in updated_reference.items():
-            with open(os.path.join(output_file, f"{sample_name}.fna"), 'w') as f:
-                f.write(f">{header}\n")
-                f.write(''.join(sequence))
+    outfile = os.path.join(output_file, f"{sample_name}.fna")
+    with open(outfile, 'w') as f:
+        for header, sequence in updated_reference.items():
+            f.write(f">{header} {sample_name}\n")
+
+            for i in range(0, len(sequence), 60):
+                subsequence = sequence[i:i+60]
+                subsequence = ''.join(subsequence)
+                f.write(subsequence + '\n')
 
 fname = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/GCA_900637215.1_49888_B01_genomic.fna.gz'
 fnames = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/infantis/infantis.vcalling.longshot.vcf.tar/minimap2/infantis/*.longshot.vcf'
