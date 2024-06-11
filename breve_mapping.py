@@ -83,13 +83,15 @@ def insert_snps(reference, vcf_data):
 def write_sample_genome(updated_reference, sample_name, output_file):
     outfile = os.path.join(output_file, f"{sample_name}.fna")
     with open(outfile, 'w') as f:
+        
         for header, sequence in updated_reference.items():
-            f.write(f">{header} {sample_name}\n")
+            if header == 'CP102536.1':
+                f.write(f">{header} {sample_name}\n")
 
-            for i in range(0, len(sequence), 60):
-                subsequence = sequence[i:i+60]
-                subsequence = ''.join(subsequence)
-                f.write(subsequence + '\n')
+                for i in range(0, len(sequence), 60):
+                    subsequence = sequence[i:i+60]
+                    subsequence = ''.join(subsequence)
+                    f.write(subsequence + '\n')
 
             #s = '\n'.join(''.join(sequence[i:i+60]) 
             #              for i in range(0, len(sequence), 60))
