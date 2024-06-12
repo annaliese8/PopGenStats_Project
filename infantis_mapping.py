@@ -28,6 +28,7 @@ def read_reference(fname):
 
 def read_vcf(fnames):
     vcf_lines = []
+
     with open(fnames) as f:
         for line in f:
             if line.startswith('##'):
@@ -46,7 +47,8 @@ def read_vcf(fnames):
             # print (line)
 
             vcf_lines.append(line)
-            return vcf_lines
+
+    return vcf_lines
 
 def insert_snps(reference, vcf_data):
     updated_reference = deepcopy(reference)
@@ -61,16 +63,19 @@ def insert_snps(reference, vcf_data):
         else:
             alt = snp['ALT']
 
+        # print(updated_reference[chrom][pos], ref, alt)
+
         if updated_reference[chrom][pos] == ref:
             updated_reference[chrom][pos] = alt
         else:
-            print(f"Ref base at {chrom}:{pos+1} does not match reference genome")
+            print(f"Ref base at {chrom}:{pos} does not match reference genome")
 
-        return updated_reference
+    return updated_reference
     
 def write_sample_genome(updated_reference, sample_name, output_file):
     outfile = os.path.join(output_file, f"{sample_name}.fna")
     with open(outfile, 'w') as f:
+        
         for header, sequence in updated_reference.items():
             f.write(f">{header} {sample_name}\n")
 

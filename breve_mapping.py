@@ -69,14 +69,6 @@ def insert_snps(reference, vcf_data):
             updated_reference[chrom][pos] = alt
         else:
             print(f"Ref base at {chrom}:{pos} does not match reference genome")
-            # this keeps going off?
-            # also, it's only going off for hte first snp of each sample
-            # ^ make sure this is being applied to each snp
-
-            # current output example:
-            # `Ref base at CP102536.1:2330695 does not match reference genome
-            # T C T`
-            # Should be: `T T C`
 
     return updated_reference
     
