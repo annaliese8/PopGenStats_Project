@@ -7,3 +7,5 @@ output_breve_genomes/*
 output_infantis_genomes/*
 share/*
 .DS_Store
+.Rproj.user
+.Rhistory

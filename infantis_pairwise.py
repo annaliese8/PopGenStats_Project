@@ -20,7 +20,7 @@ def compare_sequences(seq1, seq2):
 
     return differences
 
-fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes/*.fna')
+fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes/*.fna')
 sequences = {}
 
 for f in fnames:
