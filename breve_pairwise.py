@@ -1,5 +1,8 @@
 import glob
 import os
+import numpy
+import seaborn
+import matplotlib.pyplot as plt 
 
 def read_fasta(file):
     with open(file, 'r') as f:
@@ -20,16 +23,29 @@ def compare_sequences(seq1, seq2):
 
     return differences
 
-fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96*.fna')
+#fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96*.fna')
+fnames = glob.glob('/Users/Annaliese/Desktop/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96_*.fna')
 sequences = {}
+
+num_files = len(fnames)
+difference_matrix = numpy.zeros((num_files, num_files))
 
 for f in fnames:
     sequences[f] = read_fasta(f)
 
-for i, file1 in enumerate(fnames):
-    for file2 in fnames[i+1:]:
-        seq1 = sequences[file1]
-        seq2 = sequences[file2]
-        differences = compare_sequences(seq1, seq2)
+fnames.sort()
 
-        print(f"Differences between {os.path.basename(file1)} and {os.path.basename(file2)}: {differences}")
+for i, file1 in enumerate(fnames):
+    for j, file2 in enumerate(fnames):
+        if i != j:
+            seq1 = sequences[file1]
+            seq2 = sequences[file2]
+            differences = compare_sequences(seq1, seq2)
+            #print(f"Differences between {os.path.basename(file1)} and {os.path.basename(file2)}: {differences}")
+
+            difference_matrix[i, j] = differences
+
+#print(f"Difference Matrix: {difference_matrix}")
+
+map = seaborn.heatmap(difference_matrix)
+plt.show()
