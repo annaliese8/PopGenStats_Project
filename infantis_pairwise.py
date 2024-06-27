@@ -57,5 +57,5 @@ for i, file1 in enumerate(fnames):
 
 #print(f"Difference Matrix: {difference_matrix}")
 
-map = seaborn.heatmap(difference_matrix)
+map = seaborn.clustermap(difference_matrix)
 plt.show()
