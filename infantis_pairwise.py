@@ -23,7 +23,7 @@ def compare_sequences(seq1, seq2):
 
     return differences
 
-#fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes/SQK-NBD114-96*.fna')
+# fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes/SQK-NBD114-96*.fna')
 fnames = glob.glob('/Users/Annaliese/Desktop/PopGenStats_Project/output_infantis_genomes/SQK-NBD114-96_*.fna')
 sequences = {}
 
@@ -34,16 +34,6 @@ for f in fnames:
     sequences[f] = read_fasta(f)
 
 fnames.sort()
-
-for i, file1 in enumerate(fnames):
-    for j, file2 in enumerate(fnames):
-        if i != j:
-            seq1 = sequences[file1]
-            seq2 = sequences[file2]
-            differences = compare_sequences(seq1, seq2)
-            #print(f"Differences between {os.path.basename(file1)} and {os.path.basename(file2)}: {differences}")
-
-            difference_matrix[i, j] = differences
 
 for i, file1 in enumerate(fnames):
     for j, file2 in enumerate(fnames):
