@@ -2,8 +2,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# file_path = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/BLongum/mummer.tsv'
-file_path = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/BLongum/mummer.tsv'
+# file_path = '/home/ubuntu/wdir/PopGenStats_Project/data/BifidoIsolates/BLongum/mummer.tsv.gz'
+file_path = '/Users/Annaliese/Desktop/PopGenStats_Project/data/BifidoIsolates/BLongum/mummer.tsv.gz'
 
 columns_to_use = ['prc_aligned1', 's1', 's2']
 chunk_list = []
