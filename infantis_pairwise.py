@@ -23,8 +23,8 @@ def compare_sequences(seq1, seq2):
 
     return differences
 
-# fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes/SQK-NBD114-96*.fna')
-fnames = glob.glob('/Users/Annaliese/Desktop/PopGenStats_Project/output_infantis_genomes/SQK-NBD114-96_*.fna')
+# fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_infantis_genomes/infantis_genomes/*')
+fnames = glob.glob('/Users/Annaliese/Desktop/PopGenStats_Project/output_infantis_genomes/infantis_genomes/*')
 sequences = {}
 
 num_files = len(fnames)
@@ -45,7 +45,12 @@ for i, file1 in enumerate(fnames):
 
             difference_matrix[i, j] = differences
 
+            divergence = (differences/len(seq1)) * 100
+
+            if divergence >=1:
+                print(f"% divergence between {seq1} and {seq2} = {divergence}")
+
 #print(f"Difference Matrix: {difference_matrix}")
 
-map = seaborn.clustermap(difference_matrix)
-plt.show()
+# map = seaborn.clustermap(difference_matrix)
+# plt.show()
