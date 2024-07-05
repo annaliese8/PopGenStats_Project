@@ -1,7 +1,7 @@
 import glob
 import os
 import numpy
-import seaborn
+import seaborn as sns
 import matplotlib.pyplot as plt 
 
 def read_fasta(file):
@@ -43,14 +43,17 @@ for i, file1 in enumerate(fnames):
             differences = compare_sequences(seq1, seq2)
             #print(f"Differences between {os.path.basename(file1)} and {os.path.basename(file2)}: {differences}")
 
-            difference_matrix[i, j] = differences
-
             divergence = (differences/len(seq1)) * 100
 
+            print (max(divergence))
+
             if divergence >=1:
-                print(f"% divergence between {seq1} and {seq2} = {divergence}")
+                print(f"% divergence between {file1} and {file2} = {divergence}")
+# calculate max
+
+            difference_matrix[i, j] = differences
 
 #print(f"Difference Matrix: {difference_matrix}")
 
-# map = seaborn.clustermap(difference_matrix)
+# map = sns.clustermap(difference_matrix)
 # plt.show()
