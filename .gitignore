@@ -10,3 +10,6 @@ share/*
 .Rproj.user
 .Rhistory
 .RData
+PopGenome_test.r
+mummer_clustering*.ipynb
+skani_clustering.ipynb
