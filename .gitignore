@@ -11,5 +11,7 @@ share/*
 .Rhistory
 .RData
 PopGenome_test.r
-mummer_clustering*.ipynb
+mummer_clustering_og.ipynb
+mummer_clustering.ipynb
+mummer_clustering_revised.ipynb
 skani_clustering.ipynb
