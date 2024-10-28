@@ -2,4 +2,4 @@ Our lab has Nanopore sequencing data for Bifidobacterium longum and Bifidobacter
 
 To do this, we implemented agglomerative hierarchical clustering methods on four sets of same-species samples. Two of these species data contained isolate data obtained from our lab. On these two species we also performed dereplication methods to explore alternative clustering methods.
 
-For pipeline analysis, first upload skANI file in a directory named "G_species/distances". Ensure skANI file is named "skani.tsv.gz". Then, use `strain_level_clustering.ipynb` and input species name in the format "G_species".
+For pipeline analysis, first create a nested directory named "G_species/distances" in the "data" directory (where G_species is the name of your species). Upload skANI file into the new "distances" directory. Ensure skANI file is named "skani.tsv.gz". Then, use `strain_level_clustering.ipynb` and input species name in the format "G_species".
