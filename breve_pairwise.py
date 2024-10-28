@@ -23,8 +23,7 @@ def compare_sequences(seq1, seq2):
 
     return differences
 
-#fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96*.fna')
-fnames = glob.glob('/Users/Annaliese/Desktop/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96_*.fna')
+fnames = glob.glob('/home/ubuntu/wdir/PopGenStats_Project/output_breve_genomes/SQK-NBD114-96*.fna')
 sequences = {}
 
 num_files = len(fnames)
